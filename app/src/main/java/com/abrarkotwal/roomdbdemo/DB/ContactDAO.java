@@ -27,4 +27,8 @@ public interface ContactDAO {
 
     @Query("SELECT * FROM contact WHERE phoneNumber = :number")
     public Contact getContactWithId(String number);
+
+    @Query("UPDATE contact SET firstName= :firstName, lastName= :lastName where phoneNumber = :phoneNumber")
+    public void updateContactDetail(String firstName,String lastName, String phoneNumber);
 }
+

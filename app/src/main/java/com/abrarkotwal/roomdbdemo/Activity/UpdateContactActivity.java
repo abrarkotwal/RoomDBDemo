@@ -4,6 +4,7 @@ import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -72,12 +73,14 @@ public class UpdateContactActivity extends AppCompatActivity {
                     return;
                 }
 
-                CONTACT.setFirstName(firstName);
-                CONTACT.setLastName(lastName);
-                CONTACT.setPhoneNumber(phoneNumber);
+                //CONTACT.setFirstName(firstName);
+                //CONTACT.setLastName(lastName);
+                //CONTACT.setPhoneNumber(phoneNumber);
 
-                //Insert to database
-                mContactDAO.update(CONTACT);
+                //Update to database
+                //mContactDAO.update(CONTACT);
+
+                mContactDAO.updateContactDetail(firstName,lastName,phoneNumber);
                 setResult(RESULT_OK);
                 finish();
             }
